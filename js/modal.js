@@ -14,10 +14,15 @@ const formData = document.querySelectorAll(".formData");
 
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
-
 // launch modal form
 function launchModal() {
   modalbg.style.display = "block";
+  
 }
+// closed
+const modeclose =document.querySelector(".close")
+modeclose.addEventListener("click", closeModal);
 
-
+function closeModal() {
+  modalbg.style.display = "none";
+}
