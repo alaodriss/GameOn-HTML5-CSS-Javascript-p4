@@ -67,6 +67,18 @@ img {
 .topnav .icon {
   display: none;
 }
+.popup{
+  width: 100px;
+  height: 150px;
+  border-radius: 5px;
+  background: #232323;
+}
+.text-card{
+  border: 1px dashed white;
+}
+.para{
+  font-size: 15px;
+}
 
 @media screen and (max-width: 768px) {
   .topnav a {display: none;}
