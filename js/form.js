@@ -71,3 +71,24 @@ const validEmail = function(inputEmail){
   }
 };
 
+//////////////////////////////date////////////////////////////
+
+form.birthdate.addEventListener('change',function(){
+  validDate(this);
+});
+
+const validDate = function(inputDate){
+
+  // Ceration de de la regxp pour valide date;
+  let dateRegExp = new RegExp(/^\d{4}-\d{2}-\d{2}$/);
+  let testDate = dateRegExp.test(inputDate.value);
+
+  // recuperer la balise small
+  let small = inputDate.nextElementSibling;
+  // condition de verification 
+  if(testDate){
+    small.innerHTML= ''
+  }else {
+    small.innerHTML= "Saisissez une adresse électronique valide";
+  }
+};
