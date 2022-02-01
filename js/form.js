@@ -92,3 +92,25 @@ const validDate = function(inputDate){
     small.innerHTML= "Saisissez une adresse électronique valide";
   }
 };
+
+//////////////////////////////quantity////////////////////////////
+
+form.quantity.addEventListener('change',function(){
+  validQuantity(this);
+});
+
+const validQuantity = function(inputQuantity){
+
+  // Ceration de de la regxp pour valide quantity;
+  let quantityRegExp = new RegExp("^[0-9]+$", "g");
+  let testQuantity = quantityRegExp.test(inputQuantity.value);
+
+  // recuperer la balise small
+  let small = inputQuantity.nextElementSibling;
+  // condition de verification 
+  if(testQuantity){
+    small.innerHTML= ''
+  }else {
+    small.innerHTML= "Saisissez un chiffre qui correspond au nombre de vos tournois";
+  }
+};
