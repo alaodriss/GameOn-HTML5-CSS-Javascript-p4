@@ -46,36 +46,60 @@
         </div>
         <button class="btn-signup modal-btn">je m'inscris</button></div>
            <!--Fenetre du formulaire de reservation-->
-      <div class="bground">
-        <div class="content">
-          <span class="close"></span>
-          <div class="modal-body">
-            <form name="reserve" action="index.html" method="get" onsubmit="return validate();">
-
-          <!--Fenetre du formulaire de reservation-->
-
-              <div class="formData">
-                <label>Prénom</label><br>
-                <input class="text-control" type="text" id="Prenom" name="Prenom" minlength="2"/><br>
-              </div>
-              <div class="formData">
-                <label>Nom</label><br>
-                <input class="text-control" type="text" id="Nom" name="Nom" minlength="2"/><br>
-              </div>
-              <div class="formData">
-                <label>E-mail</label><br>
-                <input class="text-control" type="email" id="email" placeholder="nom@example.com" name="email" minlength="2" maxlength="65"/><br>
-              </div>
-              <div class="formData">
-                <label>Date de naissance</label><br>
-                <input class="text-control" type="date" id="date" name="date"/><br>
-              </div>
-              <div class="formData">
-                <label>À combien de tournois GameOn avez-vous déjà participé ?</label><br>
-                <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99">
-              </div>
-              <p class="text-label">A quel tournoi souhaitez-vous participer cette année ?</p>
-
+           <div class="bground">
+            <!--Fenêtre du formulaire de reservation-->
+            <div class="content">
+    
+              <span class="close"></span>
+    
+              <div class="modal-body">
+                <!--Formulaire de reservation-->
+                <form name="reserve" id="reserve" action="index.html" method="get" onsubmit="return validate(this);">
+    
+                  <div class="formData" >
+                    <label for="first">Prénom</label><br>
+                    <input class="text-control" type="text" id="first" name="first" minlength="2" value=""/>
+                    <small></small>
+                    <br>
+                    <!--Pour afficher le message d'erreur -->
+               
+                  </div>
+                  
+                  <div class="formData">
+                    <label for="last">Nom</label><br>
+                    <input class="text-control" type="text" id="last" name="last" minlength="2" value=""/>
+                    <small></small>
+                    <br>
+                    <span class="error" id="last_error"></span>
+                  </div>
+    
+                  <div class="formData">
+                    <!--pattern=".+@globex\.com"-->
+                    <label for="email">E-mail</label>
+                    <br>
+                    <input class="text-control" type="email" id="email" name="email" placeholder="nomutilisateur@example.com" minlength="3" maxlength="64" />
+                    <small></small>
+                    <br>
+                    <span class="error" id="email_error"></span>
+                  </div>
+    
+                  <div class="formData">
+                    <label for="birthdate">Date de naissance</label><br>
+                    <input class="text-control" type="date" id="birthdate" name="birthdate" data-error-visible=""/>
+                    <br>
+                    <span class="error" id="birthdate_error"></span>
+    
+                  </div>
+    
+                  <div class="formData">
+                    <label for="quantity">À combien de tournois GameOn avez-vous déjà participé ?</label><br>
+                    <input type="text" class="text-control" id="quantity" name="quantity" data-error-visible=""/>
+                    <br>
+                    <span class="error" id="quantity_error"></span>
+                  </div>
+    
+                  <!-- l'ajout des éléments <fieldset> et <legend>  permettent de grouper les options à la fois pour la mise en forme et pour 
+                       assurer une meilleure sémantique du document-->
               <fieldset class="text-card">
 
                   <legend class="para"> Quelles villes ?</legend>
@@ -117,8 +141,9 @@
                 </label>
                 <br>
               </div>
-              <input id="btn-submit" type="submit" class="button" value="C'est parti"/>
+              <input id="btn-submit" type="submit" value="C'est parti"/>
               </div>
+              
             </form>
             <!-- <div class="confirm-modal">
               <div class="modal-body">
