@@ -209,10 +209,6 @@ let villeCheckbox = document.querySelectorAll("div.formData input[name='location
    return true;
  }
 
-
-
-
-
   function validate(form) {
     let isValidatePrenom = validPrenom(form.first);
     let isValidateNom = validNom(form.last);
