@@ -198,9 +198,12 @@ let villeCheckbox = document.querySelectorAll("div.formData input[name='location
  function validateCondGene(condGeneElt) { 
    let msgErrorCg = document.getElementById("conditions_generales_error");
    msgErrorCg.textContent = "";
+   condGeneElt.dataset.errorVisible = "false";
 
    if (!condGeneElt.checked) {
      msgErrorCg.textContent = "Cochez les conditions générales d'utilisation est obligatoire";
+     condGeneElt.dataset.errorVisible = "true";
+
      return false;
    }
    return true;

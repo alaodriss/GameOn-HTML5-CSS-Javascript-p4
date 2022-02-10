@@ -214,6 +214,43 @@ main {
   padding-top: 10px;
 }
 
+/*Traitement style message d'erreur*/
+
+.formData[data-error]::after {
+  content: attr(data-error);
+  font-size: 0.4em;
+  color: #e54858;
+  display: block;
+  margin-top: 7px;
+  margin-bottom: 7px;
+  text-align: right;
+  line-height: 0.3;
+  opacity: 0;
+  transition: 0.3s;
+}
+.formData[data-error-visible="true"]::after {
+  opacity: 1;
+}
+
+/*Traitement style message d'erreur*/
+.formData .text-control[data-error-visible="true"] {
+  border: 2px solid #e54858;
+}
+/*Traitement style saisie correcte*/
+.formData .text-control[data-error-visible="false"] {
+  border: 2px solid #279e7a;
+}
+
+.checkbox-input[data-error-visible="true"] + .checkbox2-label .checkbox-icon {
+  border: 2px solid #e54858;
+}
+
+
+.checkbox-input:checked + .checkbox2-label .checkbox-icon {
+  background: #279e7a;
+}
+
+
 .modal-body {
   padding: 15px 8%;
   margin: 15px auto;
