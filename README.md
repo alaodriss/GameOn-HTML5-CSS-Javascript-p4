@@ -1,5 +1,22 @@
-# Projet GameOn
-1. Forkez ce repo ;
-2. Il est conseillé d'utiliser VisualStudio Code et vous pouvez utiliser Docker, mais ce n'est pas obligatoire ;
-3. Il n'y a aucune dépendance ;
-4. Vous ne devez utiliser que du CSS personnalisé et du JavaScript pur, sans jQuery, Bootstrap ou autre librairie.
+# Projet N° 4 : Création d'une landing page avec Javascript
+
+Lien du site : https://alaodriss.github.io/ alaouidriss_4_02022022
+
+Compétances acquises dans ce projet :
+
+Apprenez à programmer avec Javascript
+Ecrivez du JS pour le web
+
+Technologies:
+
+- HTML5
+- CSS
+- Javascript
+
+Compatibilité :
+
+Le site responsive sur mobile, tablette et desktop
+Validation du code par W3C :
+
+- HTML
+- CSS
