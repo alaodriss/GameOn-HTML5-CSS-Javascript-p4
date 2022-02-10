@@ -213,7 +213,6 @@ main {
   color: #fff;
   padding-top: 10px;
 }
-
 /*Traitement style message d'erreur*/
 
 .formData[data-error]::after {
