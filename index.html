@@ -20,8 +20,8 @@
            <!--Nar Bar-->
       <div class="main-navbar">
         
-        <a href="#" class="active"><span>Accueil</span></a>
-        <a href="#"><span>Détails de l'évènement</span></a>
+         <!--<a href="#"><span>Accueil</span></a>-->
+        <a href="#" class="active"><span>Détails de l'évènement</span></a>
         <a href="#"><span>À propos</span></a>
         <a href="#"><span>Contact</span></a>
         <a href="#"><span>Évènements passés</span></a>
@@ -58,19 +58,20 @@
     
                   <div class="formData" >
                     <label for="first">Prénom</label><br>
-                    <input class="text-control" type="text" id="first" name="first" minlength="2" value=""/>
-                    <small></small>
-                    <br>
+                    <input class="text-control" type="text" id="first" name="first" minlength="2" value=""  data-error-visible=""/>
                     <!--Pour afficher le message d'erreur -->
+                    <span class="error" id="first_error"></span>
+                    <br>
+ 
                
                   </div>
                   
                   <div class="formData">
                     <label for="last">Nom</label><br>
-                    <input class="text-control" type="text" id="last" name="last" minlength="2" value=""/>
-                    <small></small>
-                    <br>
+                    <input class="text-control" type="text" id="last" name="last" minlength="2" value=""  data-error-visible=""/>
                     <span class="error" id="last_error"></span>
+                    <br>
+                  
                   </div>
     
                   <div class="formData">
@@ -78,40 +79,37 @@
                     <label for="email">E-mail</label>
                     <br>
                     <input class="text-control" type="email" id="email" name="email" placeholder="nomutilisateur@example.com" minlength="3" maxlength="64" />
-                    <small></small>
-                    <br>
                     <span class="error" id="email_error"></span>
+                    <br>
                   </div>
     
                   <div class="formData">
                     <label for="birthdate">Date de naissance</label><br>
                     <input class="text-control" type="date" id="birthdate" name="birthdate" data-error-visible=""/>
-                    <small></small>
-                    <br>
                     <span class="error" id="birthdate_error"></span>
-    
+                    <br>    
                   </div>
     
                   <div class="formData">
                     <label for="quantity">À combien de tournois GameOn avez-vous déjà participé ?</label><br>
                     <input type="text" class="text-control" id="quantity" name="quantity" data-error-visible=""/>
-                    <small></small>
-                    <br>
                     <span class="error" id="quantity_error"></span>
+                    <br>
+                 
                   </div>
     
                   <!-- l'ajout des éléments <fieldset> et <legend>  permettent de grouper les options à la fois pour la mise en forme et pour 
                        assurer une meilleure sémantique du document-->
               <fieldset class="text-card">
 
-                  <legend class="para"> Quelles villes ?</legend>
+                  <legend class="para"> Quelle ville ?</legend>
         
               <div class="formData">
                 
                 <input class="checkbox-input" type="radio" id="location1" name="location" value="New York"/>
                 <label class="checkbox-label" for="location1"><span class="checkbox-icon"></span>New York</label>
 
-                <input class="checkbox-input" type="radio" id="location2" name="location" value="San Francisco" checked/>
+                <input class="checkbox-input" type="radio" id="location2" name="location" value="San Francisco"/>
                 <label class="checkbox-label" for="location2"><span class="checkbox-icon"></span>San Francisco</label>
 
                 <input class="checkbox-input" type="radio" id="location3" name="location" value="Seattle"/>
@@ -125,39 +123,44 @@
                 
                 <input class="checkbox-input" type="radio" id="location6" name="location" value="Portland" />
                 <label class="checkbox-label" for="location6"><span class="checkbox-icon"></span>Portland</label>
-
+                  <br>
+                  <small class="error" id="radio_error"></small><!--radio_error verfication -->
                 
               </div>
 
             </fieldset>
               <div
                 class="formData">
-                <input class="checkbox-input" type="checkbox" id="checkbox1"/> <!--checked-->
+                <input class="checkbox-input" type="checkbox" id="checkbox1" name="conditions_generales"  data-error-visible=""/> <!--checked-->
                 <label class="checkbox2-label" for="checkbox1"> <span class="checkbox-icon"></span>
                   J'ai lu et accepté les conditions d'utilisation.
                 </label>
                 <br>
+                <span class="error" id="conditions_generales_error"></span>
+
                 <input class="checkbox-input" type="checkbox" id="checkbox2" />
                 <label class="checkbox2-label" for="checkbox2"> <span class="checkbox-icon"></span>
                   Je Je souhaite être prévenu des prochains évènements.
                 </label>
                 <br>
               </div>
-              <input id="btn-submit" type="submit" value="C'est parti"/>
+              <input id="btn-submit" type="submit"  value="C'est parti"/>
               </div>
-              
             </form>
-            <!-- <div class="confirm-modal">
-              <div class="modal-body">
-                <div class="content">
-                  <span class="confirm-close close"></span>
-                  <p class="confirm-modal-message">Merci ! Votre réservation a été reçue.</p>
-                  <button class="confirm-modal-btn">Fermer</button>
-                </div>
-          </div>
-          -->
         </div>
       </div>
+       <!-- message de confirmation -->
+       <div class="confirmation-overlay">
+        <div class="confirmation-overlay-message">
+          <span class="confirmation-message-icon-close"></span>
+          <p>
+            Merci !
+            <br>
+            Votre réservation a été reçue.
+          </p>        
+        </div>
+        <button class="confirmation-message-btn-close">Fermer</button>
+    </div>
     </main>
     <footer>
       <p class="copyrights">
