@@ -1,26 +1,12 @@
 
+
 let form = document.querySelector("#reserve");
 
+
+
+
+
 //////////////////////////////Prenom////////////////////////////
-
-
-
-form.addEventListener('submit',function(event){
-  event.preventDefault();
-  console.log(event);
-  if (validate(this)){
-    console.log("formulaire ooke")
-    form.reset();
-
-    closeModal();
-    openConfirmationMessage();
-  } else{
-    console.log("non valdie")
-  }
-
-
-});
-
 
 //Ecouter la modification.
 
@@ -30,7 +16,7 @@ form.first.addEventListener('change',function(){
 
 const validPrenom = function(prenomElt){
   let prenom = prenomElt.value;
-  // Ceration de de la regxp pour valide le prenom;
+  // Creation de de la regxp pour valide le prenom;
   let prenomRegExp = new RegExp("^[a-zA-Z]{2,}$");
   let msgErreurPrenom = document.getElementById("first_error");
   
@@ -58,7 +44,7 @@ form.last.addEventListener('change',function(){
 
 const validNom = function(nomElt){
   let nom = nomElt.value;
-  // Ceration de de la regxp pour valide le prenom;
+  // Creation de de la regxp pour valide le prenom;
   let nomRegExp = new RegExp("^[a-zA-Z]{2,}$");
   let msgErreurNom = document.getElementById("last_error");
 
@@ -83,7 +69,7 @@ form.email.addEventListener('change',function(){
 
 const validEmail = function(emailElt){
  let email = emailElt.value;
-  // Ceration de de la regxp pour valide mail;
+  // Creation de de la regxp pour valide mail;
   let emailRegExp = new RegExp(/^[^\s@]+@[^\s@]+\.[^\s@]+$/);
   let msgErrorEmail = document.getElementById("email_error");
 
@@ -107,7 +93,7 @@ form.birthdate.addEventListener('change',function(){
 const validDate = function(dateNaissanceElt){
   let dateNaissance = dateNaissanceElt.value;
 
-  // Ceration de de la regxp pour valide date;
+  // Creation de de la regxp pour valide date;
   let regexDateNaissance = new RegExp(/^\d{4}-\d{2}-\d{2}$/);
   let msgErrorDate = document.getElementById("birthdate_error");
     msgErrorDate.textContent = "";
@@ -129,7 +115,7 @@ form.quantity.addEventListener('change',function(){
 const validQuantity = function(tournoisElt){
 
   let tournois = tournoisElt.value;
-  // Ceration de de la regxp pour valide quantity;
+  // Creation de de la regxp pour valide quantity;
   let quantityRegExp = new RegExp("^[0-9]+$", "g");
   let msgErrorTournois = document.getElementById("quantity_error");
 
@@ -209,6 +195,10 @@ let villeCheckbox = document.querySelectorAll("div.formData input[name='location
    return true;
  }
 
+
+
+ // function de validation de formilaire 
+
   function validate(form) {
     let isValidatePrenom = validPrenom(form.first);
     let isValidateNom = validNom(form.last);
@@ -217,12 +207,26 @@ let villeCheckbox = document.querySelectorAll("div.formData input[name='location
     let isValidateDate = validDate(form.birthdate);
     let isValidateVille = validateVille(form.location);
     let isValidateCg = validateCondGene(form.conditions_generales);
-    console.log(isValidatePrenom)
-    console.log(isValidateNom)
-    console.log(isValidateEmail)
-    console.log(isValidateTournois)
-    console.log(isValidateDate)
-    console.log(isValidateVille)
-    console.log(isValidateCg)
+    
     return (isValidatePrenom && isValidateNom && isValidateEmail && isValidateTournois && isValidateDate && isValidateVille && isValidateCg);
      }
+
+
+    
+     //Ecouter la modification de  submit 
+
+form.addEventListener('submit',function(event){
+  event.preventDefault();
+  console.log(event);
+  if (validate(this)){
+    
+    form.reset();
+
+    closeModal();
+    openConfirmationMessage();
+  } else{
+  
+  }
+
+
+});
