@@ -2,11 +2,7 @@
 
 let form = document.querySelector("#reserve");
 
-
-
-
-
-//////////////////////////////Prenom////////////////////////////
+//////////////////////////////Prenom/////////////////////////////////
 
 //Ecouter la modification.
 
@@ -46,17 +42,21 @@ const validNom = function(nomElt){
   let nom = nomElt.value;
   // Creation de de la regxp pour valide le prenom;
   let nomRegExp = new RegExp("^[a-zA-Z]{2,}$");
+  // message de erreur 
   let msgErreurNom = document.getElementById("last_error");
 
   msgErreurNom.textContent = "";
+  //border de erreur 
   nomElt.dataset.errorVisible = "false";
 
   if (nomRegExp.test(nom) === false) {
+    //représente le contenu textuel 
     msgErreurNom.textContent = "Saisissez un nom qui contient au moins deux caractères alphabétiques";
+     //border de valide
     nomElt.dataset.errorVisible = "true";
     return false;
   }
-
+  // quand utilisateur respecte les condtions  
   return true;
 }
 
@@ -152,6 +152,7 @@ let villeCheckbox = document.querySelectorAll("div.formData input[name='location
  
    }
    
+   // le but que l utilisateur click juste sur une radios pas plus.
   
    function validateVille(radiosElt) {
     let msgErrorVille = document.getElementById("radio_error");
@@ -213,7 +214,7 @@ let villeCheckbox = document.querySelectorAll("div.formData input[name='location
 
 
     
-     //Ecouter la modification de  submit 
+  //Ecouter la modification de  submit 
 
 form.addEventListener('submit',function(event){
   event.preventDefault();
